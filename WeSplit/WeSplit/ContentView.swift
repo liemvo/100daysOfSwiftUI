@@ -55,7 +55,7 @@ struct ContentView: View {
 				}
 				
 				Section (header: Text("Total amount")){
-					Text("$\(total, specifier: "%.2f")")
+					Color.white.warningmarked(with: "$\(total)", of: Double(tipPercentages[tipPercentage]) )
 				}
 			}
 			.navigationBarTitle("WeSplit")
