@@ -13,6 +13,8 @@
 		443AA84223740C8500DD7E91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443AA84123740C8500DD7E91 /* Assets.xcassets */; };
 		443AA84523740C8500DD7E91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443AA84423740C8500DD7E91 /* Preview Assets.xcassets */; };
 		443AA84823740C8500DD7E91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443AA84623740C8500DD7E91 /* LaunchScreen.storyboard */; };
+		443AA8762374897000DD7E91 /* HideandShowViewsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AA8752374897000DD7E91 /* HideandShowViewsTransition.swift */; };
+		443AA878237489A100DD7E91 /* AnimationGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AA877237489A100DD7E91 /* AnimationGestures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		443AA84423740C8500DD7E91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		443AA84723740C8500DD7E91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		443AA84923740C8500DD7E91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		443AA8752374897000DD7E91 /* HideandShowViewsTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideandShowViewsTransition.swift; sourceTree = "<group>"; };
+		443AA877237489A100DD7E91 /* AnimationGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationGestures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				443AA84623740C8500DD7E91 /* LaunchScreen.storyboard */,
 				443AA84923740C8500DD7E91 /* Info.plist */,
 				443AA84323740C8500DD7E91 /* Preview Content */,
+				443AA8752374897000DD7E91 /* HideandShowViewsTransition.swift */,
+				443AA877237489A100DD7E91 /* AnimationGestures.swift */,
 			);
 			path = Project6;
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443AA878237489A100DD7E91 /* AnimationGestures.swift in Sources */,
+				443AA8762374897000DD7E91 /* HideandShowViewsTransition.swift in Sources */,
 				443AA83C23740C8300DD7E91 /* AppDelegate.swift in Sources */,
 				443AA83E23740C8300DD7E91 /* SceneDelegate.swift in Sources */,
 				443AA84023740C8300DD7E91 /* ContentView.swift in Sources */,
