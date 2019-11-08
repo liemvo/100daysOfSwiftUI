@@ -16,8 +16,12 @@ struct ContentView: View {
 	@State private var scoreTitle = ""
 	
 	@State private var score = 0
+	@State private var animationAmount = [0.0, 0.0, 0.0]
+	@State private var opacities = [1.0, 1.0, 1.0]
+	//	@State private var buttons: [View]
 	
 	var body: some View {
+		
 		ZStack {
 			LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
 			VStack (spacing: 30) {
@@ -34,9 +38,30 @@ struct ContentView: View {
 				ForEach(0 ..< 3) { number in
 					Button(action: {
 						self.flagTapped(number)
+						withAnimation(.easeOut(duration: 1)) {
+							if number == self.correctAnswer {
+								self.animationAmount[number] += 360
+								switch number {
+								case 0:
+									self.opacities[1] = 0.75
+									self.opacities[2] = 0.75
+								case 1:
+									self.opacities[0] = 0.75
+									self.opacities[2] = 0.75
+								default:
+									self.opacities[0] = 0.75
+									self.opacities[1] = 0.75
+								}
+							} else {
+								self.opacities[number] = 0.2
+							}
+						}
 					}) {
 						Color.white.flagStyle(of: self.countries[number])
+							.rotation3DEffect(.degrees(self.animationAmount[number]), axis: (x: 0, y: 1, z: 0))
+							.opacity(self.opacities[number])
 					}
+					
 				}
 				
 				Text("Score: \(score)")
@@ -59,7 +84,9 @@ struct ContentView: View {
 	}
 	
 	private func askQuestion() {
-		countries.shuffled()
+		opacities = [1.0, 1.0, 1.0]
+		animationAmount = [0.0, 0.0, 0.0]
+		countries = countries.shuffled()
 		correctAnswer = Int.random(in: 0...2)
 	}
 }
