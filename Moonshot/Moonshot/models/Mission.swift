@@ -10,8 +10,8 @@ import Foundation
 
 struct Mission: Codable, Identifiable {
 	struct CrewRole: Codable {
-		let name: String?
-		let role: String?
+		let name: String
+		let role: String
 	}
 	
 	let id: Int
