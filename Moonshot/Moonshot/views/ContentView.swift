@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View {
 	let missions: [Mission] = Bundle.main.decode("missions.json")
 	let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
+	
+	@State private var showLaunchDate = true
 	var body: some View {
 		NavigationView {
 			List(missions) { mission in
@@ -24,12 +26,15 @@ struct ContentView: View {
 					VStack(alignment: .leading) {
 						Text(mission.displayName)
 							.font(.headline)
-						Text(mission.formattedLaunchDate)
+						Text(self.showLaunchDate ? mission.formattedLaunchDate : mission.crewName)
 					}
 				}
 				
 			}
 			.navigationBarTitle("MoonShot")
+			.navigationBarItems(trailing: Button( showLaunchDate ? "Show Crew" : "Show Launch Date") {
+				self.showLaunchDate.toggle()
+			})
 		}
 	}
 }
