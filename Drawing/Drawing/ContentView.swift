@@ -9,44 +9,32 @@
 import SwiftUI
 
 struct ContentView: View {
-	@State private var innerRadius = 125.0
-	@State private var outerRadius = 75.0
-	@State private var distance = 25.0
-	@State private var amount: CGFloat = 1.0
+	@State private var width: CGFloat = 80.0
 	@State private var hue = 0.6
-	
+	let maxWidth: CGFloat = 360
 	var body: some View {
 		VStack(spacing: 0) {
 			Spacer()
-			Spirograph(innerRadius: Int(innerRadius), outerRadius: Int(outerRadius), distance: Int(distance), amount: amount)
+			Arrow(width: width)
 				.stroke(Color(hue: hue, saturation: 1, brightness: 1), lineWidth: 1)
-				.frame(width: 300, height: 300)
+				.frame(width: 300, height: 600)
+				.colorInvert()
+			
 			Spacer()
 			
 			Group {
-				Text("Inner radius: \(Int(innerRadius))")
-				Slider(value: $innerRadius, in: 10...150, step: 1)
-					.padding([.horizontal, .bottom])
-				
-				Text("Outer radius: \(Int(outerRadius))")
-				Slider(value: $outerRadius, in: 10...150, step: 1)
-					.padding([.horizontal, .bottom])
-				
-				Text("Distance: \(Int(distance))")
-				Slider(value: $distance, in: 1...150, step: 1)
-					.padding([.horizontal, .bottom])
-				
-				Text("Amount: \(amount, specifier: "%.2f")")
-				Slider(value: $amount)
+				Text("Width: \(Int(width))")
+				Slider(value: $width, in: 10...maxWidth, step: 1)
 					.padding([.horizontal, .bottom])
 				
 				Text("Color")
 				Slider(value: $hue)
+				
 			}
 		}
-	
+		
 	}
-
+	
 }
 
 struct ContentView_Previews: PreviewProvider {

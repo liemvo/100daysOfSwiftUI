@@ -19,6 +19,7 @@
 		44A782EA237D43DC00EE5BE2 /* ColorCyclingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A782E9237D43DC00EE5BE2 /* ColorCyclingCircle.swift */; };
 		44F0DE91237F25E6005A561A /* Checkerboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0DE90237F25E6005A561A /* Checkerboard.swift */; };
 		44F0DE93237F2953005A561A /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0DE92237F2953005A561A /* Spirograph.swift */; };
+		44F0DE95237F4F7D005A561A /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0DE94237F4F7D005A561A /* Arrow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		44A782E9237D43DC00EE5BE2 /* ColorCyclingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingCircle.swift; sourceTree = "<group>"; };
 		44F0DE90237F25E6005A561A /* Checkerboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkerboard.swift; sourceTree = "<group>"; };
 		44F0DE92237F2953005A561A /* Spirograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirograph.swift; sourceTree = "<group>"; };
+		44F0DE94237F4F7D005A561A /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				44A782E9237D43DC00EE5BE2 /* ColorCyclingCircle.swift */,
 				44F0DE90237F25E6005A561A /* Checkerboard.swift */,
 				44F0DE92237F2953005A561A /* Spirograph.swift */,
+				44F0DE94237F4F7D005A561A /* Arrow.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				447500B8237BEB3D0038EEF8 /* AppDelegate.swift in Sources */,
 				44A782EA237D43DC00EE5BE2 /* ColorCyclingCircle.swift in Sources */,
 				44F0DE93237F2953005A561A /* Spirograph.swift in Sources */,
+				44F0DE95237F4F7D005A561A /* Arrow.swift in Sources */,
 				447500CD237CFB610038EEF8 /* Triangle.swift in Sources */,
 				447500D1237CFBB10038EEF8 /* Flower.swift in Sources */,
 				447500CF237CFB940038EEF8 /* Arc.swift in Sources */,
