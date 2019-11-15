@@ -20,6 +20,7 @@
 		44F0DE91237F25E6005A561A /* Checkerboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0DE90237F25E6005A561A /* Checkerboard.swift */; };
 		44F0DE93237F2953005A561A /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0DE92237F2953005A561A /* Spirograph.swift */; };
 		44F0DE95237F4F7D005A561A /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0DE94237F4F7D005A561A /* Arrow.swift */; };
+		44F0DE97237F56BE005A561A /* ColorCyclingRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F0DE96237F56BE005A561A /* ColorCyclingRectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		44F0DE90237F25E6005A561A /* Checkerboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkerboard.swift; sourceTree = "<group>"; };
 		44F0DE92237F2953005A561A /* Spirograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirograph.swift; sourceTree = "<group>"; };
 		44F0DE94237F4F7D005A561A /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		44F0DE96237F56BE005A561A /* ColorCyclingRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingRectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				44F0DE90237F25E6005A561A /* Checkerboard.swift */,
 				44F0DE92237F2953005A561A /* Spirograph.swift */,
 				44F0DE94237F4F7D005A561A /* Arrow.swift */,
+				44F0DE96237F56BE005A561A /* ColorCyclingRectangle.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				447500CD237CFB610038EEF8 /* Triangle.swift in Sources */,
 				447500D1237CFBB10038EEF8 /* Flower.swift in Sources */,
 				447500CF237CFB940038EEF8 /* Arc.swift in Sources */,
+				44F0DE97237F56BE005A561A /* ColorCyclingRectangle.swift in Sources */,
 				44F0DE91237F25E6005A561A /* Checkerboard.swift in Sources */,
 				447500BA237BEB3D0038EEF8 /* SceneDelegate.swift in Sources */,
 				447500BC237BEB3D0038EEF8 /* ContentView.swift in Sources */,

@@ -9,29 +9,41 @@
 import SwiftUI
 
 struct ContentView: View {
-	@State private var width: CGFloat = 80.0
-	@State private var hue = 0.6
-	let maxWidth: CGFloat = 360
+	private let unitPoints = [UnitPoint.top, UnitPoint.bottom, UnitPoint.leading, UnitPoint.trailing, UnitPoint.center]
+	private let unitPointsName = ["Top", "Bottom", "Leading", "Trailing", "Center"]
+	@State private var colorCycle = 0.0
+	
+	@State private var currentStart = 0
+	@State private var currentEnd = 3
+	
 	var body: some View {
-		VStack(spacing: 0) {
-			Spacer()
-			Arrow(width: width)
-				.stroke(Color(hue: hue, saturation: 1, brightness: 1), lineWidth: 1)
-				.frame(width: 300, height: 600)
-				.colorInvert()
+		VStack {
+			ColorCyclingRectangle(amount: self.colorCycle, startPoint: unitPoints[currentStart], endPoint: unitPoints[currentEnd])
+				.frame(width: 360, height: 240)
+				.padding(.bottom)
 			
-			Spacer()
+			Text("Change Color")
+			Slider(value: $colorCycle)
+				.padding(.bottom)
 			
-			Group {
-				Text("Width: \(Int(width))")
-				Slider(value: $width, in: 10...maxWidth, step: 1)
-					.padding([.horizontal, .bottom])
-				
-				Text("Color")
-				Slider(value: $hue)
-				
-			}
+			Text("Start Point")
+			Picker("Start Point", selection: $currentStart) {
+				ForEach(0 ..< unitPoints.count) {
+					Text(self.unitPointsName[$0])
+				}
+			}.pickerStyle(SegmentedPickerStyle())
+				.padding(.bottom)
+			
+			
+			Text("End Point")
+			Picker("End Point", selection: $currentEnd) {
+				ForEach(0 ..< unitPoints.count) {
+					Text(self.unitPointsName[$0])
+				}
+			}.pickerStyle(SegmentedPickerStyle())
+				.padding(.bottom)
 		}
+		.padding()
 		
 	}
 	
