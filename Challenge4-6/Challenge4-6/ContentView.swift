@@ -35,7 +35,7 @@ struct ContentView: View {
 					}
 					
 					Section(header: Text("Number of question")) {
-						Picker("Number quétion", selection: $numberOfQuestionPosition) {
+						Picker("Number question", selection: $numberOfQuestionPosition) {
 							ForEach(0 ..< numberQuestions.count) {
 								Text(self.numberQuestions[$0])
 							}
