@@ -20,6 +20,10 @@ class Activities: ObservableObject {
 		}
 	}
 	
+	func isEmpty() -> Bool {
+		activities.isEmpty
+	}
+	
 	init() {
 		if let activities = UserDefaults.standard.data(forKey: KEY) {
 			let decoder = JSONDecoder()

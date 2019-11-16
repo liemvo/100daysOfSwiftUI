@@ -9,14 +9,21 @@
 import SwiftUI
 
 struct ContentView: View {
-	@ObservedObject var activities: Activities
+	@ObservedObject var activities = Activities()
 	
 	@State private var showingAddActivity = false
 	var body: some View {
 		NavigationView {
 			List {
-				ForEach(activities.activities) { index in
-					ActivityRow(activity: self.$activities.activities[index], activities: self.activities)
+				if activities.isEmpty() {
+					Text("You have no habits")
+				} else {
+					ForEach(activities.activities) { index in
+						ActivityRow(activity: self.$activities.activities[index], activities: self.$activities.activities)
+					}
+					.onDelete { indexSet in
+						self.activities.activities.remove(atOffsets: indexSet)
+					}
 				}
 			}
 			.navigationBarTitle("Habits")
@@ -38,6 +45,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView(activities: Activities())
+		ContentView()
 	}
 }

@@ -10,14 +10,10 @@ import SwiftUI
 
 struct EditActivity: View {
 	@Environment(\.presentationMode) var presentationMode
-//	@State private var title: String = ""
-//	@State private var type: String = "Good"
-//	@State private var description: String = ""
-//	@State private var repeatTime: Int = 1
 	
 	static let types: [String] = ["Very Good", "Good", "Normal", "Bad", "Very Bad"]
 	
-	@ObservedObject var activities: Activities
+	@Binding var activities: [Activity]
 	@Binding var activity: Activity
 	@State private var isShowAlert = false
 	
@@ -50,7 +46,7 @@ struct EditActivity: View {
 		.navigationBarItems(trailing: Button("Save") {
 			if self.activity.title.count > 0 {
 				
-				self.activities.activities = self.activities.activities.map { $0.id == self.activity.id ? self.activity : $0 }
+				self.activities = self.activities.map { $0.id == self.activity.id ? self.activity : $0 }
 				self.presentationMode.wrappedValue.dismiss()
 				
 			} else {
