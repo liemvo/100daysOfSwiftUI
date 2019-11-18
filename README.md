@@ -10,4 +10,7 @@
 8. [Day 32, 33](Project6)
 9. [Challenge 4-6, day 35](Project4-6)
 10. [Day 36, 37, & 38](Project7)
-11. [Day 39, 40, & 41](Moonshot)
+11. [Day 39, 40, 41 & 42](Moonshot)
+12. [Day 43, 44, 45 & 46](Drawing)
+13. [Day 47](HabitTracking)
+14. [Day 48](CupcakeCorner)
