@@ -44,6 +44,7 @@ struct ContentView: View {
 						Text("Delivery details")
 					}
 				}
+				
 			}.navigationBarTitle("Cupcake Corner")
 		}
 	}

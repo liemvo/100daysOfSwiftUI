@@ -8,16 +8,22 @@
 
 import Foundation
 
-struct Address {
+struct Address: Codable {
 	var name = ""
 	var streetAddress = ""
 	var city = ""
 	var zip = ""
 	
 	var hasValidAddress: Bool {
-		if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+		if name.isBlankOrEmpty() || streetAddress.isBlankOrEmpty() || city.isBlankOrEmpty() || zip.isBlankOrEmpty() {
 			return false
 		}
 		return true
+	}
+}
+
+extension String {
+	func isBlankOrEmpty() -> Bool {
+		return self.replacingOccurrences(of: " ", with: "").isEmpty
 	}
 }
