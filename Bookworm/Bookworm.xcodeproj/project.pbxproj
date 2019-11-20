@@ -17,6 +17,7 @@
 		448C2699238509CF00C01F7B /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C2698238509CF00C01F7B /* AddBookView.swift */; };
 		448C269B2385150C00C01F7B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C269A2385150C00C01F7B /* RatingView.swift */; };
 		448C269E2385181E00C01F7B /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C269D2385181E00C01F7B /* EmojiRatingView.swift */; };
+		448C26A023851AD000C01F7B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448C269F23851AD000C01F7B /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		448C2698238509CF00C01F7B /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		448C269A2385150C00C01F7B /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		448C269D2385181E00C01F7B /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		448C269F23851AD000C01F7B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				448C2698238509CF00C01F7B /* AddBookView.swift */,
 				448C269A2385150C00C01F7B /* RatingView.swift */,
 				448C269D2385181E00C01F7B /* EmojiRatingView.swift */,
+				448C269F23851AD000C01F7B /* DetailView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				448C267E2384FEBE00C01F7B /* AppDelegate.swift in Sources */,
+				448C26A023851AD000C01F7B /* DetailView.swift in Sources */,
 				448C26832384FEBE00C01F7B /* Bookworm.xcdatamodeld in Sources */,
 				448C269E2385181E00C01F7B /* EmojiRatingView.swift in Sources */,
 				448C26852384FEBE00C01F7B /* ContentView.swift in Sources */,
