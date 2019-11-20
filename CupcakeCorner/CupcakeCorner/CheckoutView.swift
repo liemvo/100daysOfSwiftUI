@@ -34,7 +34,7 @@ struct CheckoutView: View {
 		}
 		.navigationBarTitle("Checkout", displayMode: .inline)
 		.alert(isPresented: $showingConfirmation) { () -> Alert in
-			Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("OK")))
+			Alert(title: Text(alertTitle), message: Text(confirmationMessage), dismissButton: .default(Text("OK")))
 		}
 	}
 	
@@ -52,7 +52,7 @@ struct CheckoutView: View {
 		
 		URLSession.shared.dataTask(with: request) { data, response, error in
 			guard let data = data else {
-				if let error = error as? NSError, error.code == -1009 {
+				if let error = error as NSError?, error.code == -1009 {
 					self.showingConfirmation = true
 					self.alertTitle = "Error!"
 					self.confirmationMessage = "There is no internet"
