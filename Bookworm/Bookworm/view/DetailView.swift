@@ -20,7 +20,7 @@ struct DetailView: View {
 		GeometryReader { geometry in
 			VStack {
 				ZStack(alignment: .bottomTrailing) {
-					Image(self.book.genre ?? "Fantasy")
+					Image((self.book.genre == "" ? "NA" : self.book.genre) ?? "Fantasy")
 						.frame(maxWidth: geometry.size.width)
 					
 					Text(self.book.genre?.uppercased() ?? "FANTASY")
@@ -39,6 +39,10 @@ struct DetailView: View {
 
 				Text(self.book.review ?? "No review")
 					.padding()
+				
+				Text("Published: \(self.formatDate(date: self.book.date))")
+				.font(.title)
+					.foregroundColor(.green)
 
 				RatingView(rating: .constant(Int(self.book.rating)))
 					.font(.largeTitle)
@@ -58,6 +62,12 @@ struct DetailView: View {
 		})
 	}
 	
+	func formatDate(date: Date?) -> String {
+		let formatter = DateFormatter()
+		formatter.dateStyle = .medium
+		guard let date = date else { return "N/A" }
+		return formatter.string(from: date)
+	}
 	func deleteBook() {
 		moc.delete(book)
 
@@ -74,6 +84,7 @@ struct DetailView_Previews: PreviewProvider {
 		book.author = "Test author"
 		book.genre = "Kids"
 		book.rating = 4
+		book.date = Date()
 		book.review = "This was a great book; I really enjoyed it."
 		
 		return NavigationView {

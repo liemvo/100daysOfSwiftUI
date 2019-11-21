@@ -14,10 +14,11 @@ struct AddBookView: View {
 	@State private var title = ""
 	@State private var author = ""
 	@State private var rating = 3
-	@State private var genre  = ""
+	@State private var genre  = "NA"
 	@State private var review  = ""
+	@State private var date: Date = Date()
 	
-	let genres = ["Sport", "Education", "Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
+	let genres = ["NA", "Sport", "Education", "Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     var body: some View {
 		NavigationView {
 			Form {
@@ -30,6 +31,10 @@ struct AddBookView: View {
 							Text($0)
 						}
 					}
+					
+					DatePicker("Please select date", selection: $date, displayedComponents: .date).labelsHidden()
+					.datePickerStyle(WheelDatePickerStyle())
+					
 				}
 				
 				Section {
@@ -46,6 +51,7 @@ struct AddBookView: View {
 						newBook.rating = Int16(self.rating)
 						newBook.genre = self.genre
 						newBook.review = self.review
+						newBook.date = self.date
 						
 						try? self.moc.save()
 						self.presentationMode.wrappedValue.dismiss()
