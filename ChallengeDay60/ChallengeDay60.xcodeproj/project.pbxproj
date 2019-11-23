@@ -13,6 +13,7 @@
 		443FF3EE2388BA8C00D03D82 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FF3EA2388BA8C00D03D82 /* User+CoreDataClass.swift */; };
 		443FF3EF2388BA8C00D03D82 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FF3EB2388BA8C00D03D82 /* User+CoreDataProperties.swift */; };
 		443FF3F12388C4B100D03D82 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FF3F02388C4B100D03D82 /* SwiftyJSON.swift */; };
+		44EFF2AE2389A5BF00A738D0 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EFF2AD2389A5BF00A738D0 /* Tags.swift */; };
 		A82062DA2387DFA800E76F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062D92387DFA800E76F97 /* AppDelegate.swift */; };
 		A82062DC2387DFA800E76F97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062DB2387DFA800E76F97 /* SceneDelegate.swift */; };
 		A82062DE2387DFA800E76F97 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062DD2387DFA800E76F97 /* ContentView.swift */; };
@@ -31,6 +32,7 @@
 		443FF3EA2388BA8C00D03D82 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		443FF3EB2388BA8C00D03D82 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		443FF3F02388C4B100D03D82 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		44EFF2AD2389A5BF00A738D0 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		A82062D62387DFA800E76F97 /* ChallengeDay60.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeDay60.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82062D92387DFA800E76F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A82062DB2387DFA800E76F97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				443FF3E92388BA8C00D03D82 /* Friend+CoreDataProperties.swift */,
 				443FF3EA2388BA8C00D03D82 /* User+CoreDataClass.swift */,
 				443FF3EB2388BA8C00D03D82 /* User+CoreDataProperties.swift */,
+				44EFF2AD2389A5BF00A738D0 /* Tags.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				443FF3ED2388BA8C00D03D82 /* Friend+CoreDataProperties.swift in Sources */,
 				443FF3F12388C4B100D03D82 /* SwiftyJSON.swift in Sources */,
 				A82062DA2387DFA800E76F97 /* AppDelegate.swift in Sources */,
+				44EFF2AE2389A5BF00A738D0 /* Tags.swift in Sources */,
 				443FF3EE2388BA8C00D03D82 /* User+CoreDataClass.swift in Sources */,
 				A82062F32387E1B800E76F97 /* DataManager.swift in Sources */,
 				A82062DC2387DFA800E76F97 /* SceneDelegate.swift in Sources */,

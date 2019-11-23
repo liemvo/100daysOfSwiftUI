@@ -24,7 +24,7 @@ extension User {
     @NSManaged public var email: String?
     @NSManaged public var address: String?
     @NSManaged public var about: String?
-    @NSManaged public var tags: String?
+    @NSManaged public var tags: NSObject?
     @NSManaged public var name: String?
     @NSManaged public var registered: String?
     @NSManaged public var friends: NSSet?
@@ -50,7 +50,11 @@ extension User {
 	}
 	
 	var wrappedTags: [String] {
-		tags?.components(separatedBy: "---") ?? []
+		if let tags = tags as? Tags {
+			return tags.tags
+		} else {
+			return []
+		}
 	}
 	
 	var wrappedName: String {

@@ -36,9 +36,9 @@ class DataManager: ObservableObject {
 				user.address = item["address"].string
 				user.registered = item["registered"].string
 				
-				let tags = item["tags"].arrayValue
-				let tagsString: [String] = tags.map { ($0.string ?? "") }
-				user.tags = tagsString.joined(separator: "---")
+				 let tags = item["tags"].arrayValue
+				 let tagsString: [String] = tags.map { ($0.string ?? "") }
+				user.tags = Tags(tags: tagsString)
 				
 				let friendJson = item["friends"].arrayValue
 				let friends = NSMutableSet()
