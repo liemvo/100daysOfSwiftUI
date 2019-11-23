@@ -9,15 +9,15 @@
 import SwiftUI
 
 struct AgeView: View {
-	var number: Int
+	var number: Int16
 	var padding: CGFloat = 32.0
+	var font: Font = .largeTitle
 	var body: some View {
 		Text("\(number)")
-			.font(.largeTitle)
+			.font(font)
 			.padding(padding)
 			.background(number < 25 ? Color.green: number < 40 ? Color.blue : Color.gray)
 			.foregroundColor(.white)
-			.clipped()
 			.clipShape(Circle())
 	}
 }

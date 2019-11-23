@@ -7,20 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443FF3E42388AF8700D03D82 /* Challenge61.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 443FF3E22388AF8700D03D82 /* Challenge61.xcdatamodeld */; };
+		443FF3EC2388BA8C00D03D82 /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FF3E82388BA8C00D03D82 /* Friend+CoreDataClass.swift */; };
+		443FF3ED2388BA8C00D03D82 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FF3E92388BA8C00D03D82 /* Friend+CoreDataProperties.swift */; };
+		443FF3EE2388BA8C00D03D82 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FF3EA2388BA8C00D03D82 /* User+CoreDataClass.swift */; };
+		443FF3EF2388BA8C00D03D82 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FF3EB2388BA8C00D03D82 /* User+CoreDataProperties.swift */; };
+		443FF3F12388C4B100D03D82 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443FF3F02388C4B100D03D82 /* SwiftyJSON.swift */; };
 		A82062DA2387DFA800E76F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062D92387DFA800E76F97 /* AppDelegate.swift */; };
 		A82062DC2387DFA800E76F97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062DB2387DFA800E76F97 /* SceneDelegate.swift */; };
 		A82062DE2387DFA800E76F97 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062DD2387DFA800E76F97 /* ContentView.swift */; };
 		A82062E02387DFA900E76F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82062DF2387DFA900E76F97 /* Assets.xcassets */; };
 		A82062E32387DFA900E76F97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82062E22387DFA900E76F97 /* Preview Assets.xcassets */; };
 		A82062E62387DFA900E76F97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82062E42387DFA900E76F97 /* LaunchScreen.storyboard */; };
-		A82062EF2387E06000E76F97 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062EE2387E06000E76F97 /* Friend.swift */; };
-		A82062F12387E08300E76F97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062F02387E08300E76F97 /* User.swift */; };
 		A82062F32387E1B800E76F97 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062F22387E1B800E76F97 /* DataManager.swift */; };
 		A82062F52387EB0B00E76F97 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062F42387EB0B00E76F97 /* UserView.swift */; };
 		A82062F72387EE7F00E76F97 /* AgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82062F62387EE7F00E76F97 /* AgeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		443FF3E32388AF8700D03D82 /* Challenge61.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Challenge61.xcdatamodel; sourceTree = "<group>"; };
+		443FF3E82388BA8C00D03D82 /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		443FF3E92388BA8C00D03D82 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		443FF3EA2388BA8C00D03D82 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		443FF3EB2388BA8C00D03D82 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		443FF3F02388C4B100D03D82 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A82062D62387DFA800E76F97 /* ChallengeDay60.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeDay60.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82062D92387DFA800E76F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A82062DB2387DFA800E76F97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,8 +39,6 @@
 		A82062E22387DFA900E76F97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A82062E52387DFA900E76F97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A82062E72387DFA900E76F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A82062EE2387E06000E76F97 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
-		A82062F02387E08300E76F97 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A82062F22387E1B800E76F97 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A82062F42387EB0B00E76F97 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		A82062F62387EE7F00E76F97 /* AgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeView.swift; sourceTree = "<group>"; };
@@ -66,6 +74,7 @@
 		A82062D82387DFA800E76F97 /* ChallengeDay60 */ = {
 			isa = PBXGroup;
 			children = (
+				443FF3F02388C4B100D03D82 /* SwiftyJSON.swift */,
 				A82062ED2387E05100E76F97 /* models */,
 				A82062D92387DFA800E76F97 /* AppDelegate.swift */,
 				A82062DB2387DFA800E76F97 /* SceneDelegate.swift */,
@@ -77,6 +86,7 @@
 				A82062F22387E1B800E76F97 /* DataManager.swift */,
 				A82062F42387EB0B00E76F97 /* UserView.swift */,
 				A82062F62387EE7F00E76F97 /* AgeView.swift */,
+				443FF3E22388AF8700D03D82 /* Challenge61.xcdatamodeld */,
 			);
 			path = ChallengeDay60;
 			sourceTree = "<group>";
@@ -92,8 +102,10 @@
 		A82062ED2387E05100E76F97 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				A82062EE2387E06000E76F97 /* Friend.swift */,
-				A82062F02387E08300E76F97 /* User.swift */,
+				443FF3E82388BA8C00D03D82 /* Friend+CoreDataClass.swift */,
+				443FF3E92388BA8C00D03D82 /* Friend+CoreDataProperties.swift */,
+				443FF3EA2388BA8C00D03D82 /* User+CoreDataClass.swift */,
+				443FF3EB2388BA8C00D03D82 /* User+CoreDataProperties.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -114,6 +126,8 @@
 			dependencies = (
 			);
 			name = ChallengeDay60;
+			packageProductDependencies = (
+			);
 			productName = ChallengeDay60;
 			productReference = A82062D62387DFA800E76F97 /* ChallengeDay60.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +156,8 @@
 				Base,
 			);
 			mainGroup = A82062CD2387DFA800E76F97;
+			packageReferences = (
+			);
 			productRefGroup = A82062D72387DFA800E76F97 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,12 +186,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A82062F72387EE7F00E76F97 /* AgeView.swift in Sources */,
+				443FF3EC2388BA8C00D03D82 /* Friend+CoreDataClass.swift in Sources */,
+				443FF3ED2388BA8C00D03D82 /* Friend+CoreDataProperties.swift in Sources */,
+				443FF3F12388C4B100D03D82 /* SwiftyJSON.swift in Sources */,
 				A82062DA2387DFA800E76F97 /* AppDelegate.swift in Sources */,
+				443FF3EE2388BA8C00D03D82 /* User+CoreDataClass.swift in Sources */,
 				A82062F32387E1B800E76F97 /* DataManager.swift in Sources */,
 				A82062DC2387DFA800E76F97 /* SceneDelegate.swift in Sources */,
+				443FF3EF2388BA8C00D03D82 /* User+CoreDataProperties.swift in Sources */,
+				443FF3E42388AF8700D03D82 /* Challenge61.xcdatamodeld in Sources */,
 				A82062DE2387DFA800E76F97 /* ContentView.swift in Sources */,
-				A82062F12387E08300E76F97 /* User.swift in Sources */,
-				A82062EF2387E06000E76F97 /* Friend.swift in Sources */,
 				A82062F52387EB0B00E76F97 /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +388,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		443FF3E22388AF8700D03D82 /* Challenge61.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				443FF3E32388AF8700D03D82 /* Challenge61.xcdatamodel */,
+			);
+			currentVersion = 443FF3E32388AF8700D03D82 /* Challenge61.xcdatamodel */;
+			path = Challenge61.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A82062CE2387DFA800E76F97 /* Project object */;
 }

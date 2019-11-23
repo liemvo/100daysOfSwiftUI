@@ -11,76 +11,84 @@ import SwiftUI
 struct UserView: View {
 	@ObservedObject var dataManager: DataManager
 	var currentUser: User
+	var connectedUsers = [User]()
 	
 	var body: some View {
-		ScrollView {
+		ScrollView(.vertical) {
 			VStack {
-				Section(header: Text("Basic Info").font(.headline)) {
-					VStack(alignment: .leading) {
-						Text(currentUser.name)
-							.font(.largeTitle)
-							.foregroundColor(.blue)
-						HStack {
-							Text("Age").foregroundColor(.gray)
-							AgeView(number: currentUser.age, padding: 8)
-							Spacer()
-						}
-						
-						HStack {
-							Text("Address: ").foregroundColor(.gray)
-							Text(currentUser.address)
-						}
-						HStack {
-							Text("Company: ").foregroundColor(.gray)
-							Text(currentUser.company)
-						}
-						HStack {
-							Text("Email: ").foregroundColor(.gray)
-							Text(currentUser.email)
-						}
-						HStack {
-							Text("Register: ").foregroundColor(.gray)
-							Text("\(currentUser.registerDateFormater)")
-						}
-					}.padding()
+				Group {
+					Spacer(minLength: 32)
+					Text(currentUser.wrappedName)
+						.font(.largeTitle)
+						.foregroundColor(currentUser.isActive ? .blue : .gray)
+					HStack {
+						Text("Age").foregroundColor(.gray)
+						AgeView(number: currentUser.age, padding: 8)
+						Spacer()
+					}
+					
+					HStack {
+						Text("Address: ").foregroundColor(.gray)
+						Text(currentUser.wrappedAddress)
+					}
+					HStack {
+						Text("Company: ").foregroundColor(.gray)
+						Text(currentUser.wrappedCompany)
+					}
+					HStack {
+						Text("Email: ").foregroundColor(.gray)
+						Text(currentUser.wrappedEmail)
+					}
+					HStack {
+						Text("Register: ").foregroundColor(.gray)
+						Text("\(currentUser.registerDateFormater)")
+					}
+				}
+				Group {
+					Spacer(minLength: 32)
+					Text("About")
+						.font(.body)
+						.foregroundColor(.orange)
+					Text(currentUser.wrappedAbout)
 				}
 				
-				Section(header: Text("About").font(.headline)) {
-					Text(currentUser.about)
-				}.padding()
-				
-				Section(header: Text("Friend").font(.headline)) {
-					
-					ForEach(currentUser.friends) { friend in
-		
-						NavigationLink(destination: UserView(dataManager: self.dataManager, currentUser: self.dataManager.getUser(id: friend.id)!)) {
-							HStack {
-								Text(friend.name)
-								Spacer()
-							}
+				Spacer(minLength: 32)
+				Text("Connect Friends")
+					.font(.body)
+					.foregroundColor(.orange)
+				ScrollView(.horizontal) {
+					HStack {
+						ForEach(self.connectedUsers, id:\.self) { user in
+							NavigationLink(destination: UserView(dataManager: self.dataManager, currentUser: user)) {
+								VStack {
+									AgeView(number: user.age, padding: 8)
+										.padding()
+									Text(user.wrappedName)
+										.font(.headline)
+										.lineLimit(2)
+										.foregroundColor(user.isActive ? .blue : .gray)
+									
+								}
+							}.frame(width: 160, height: 240, alignment: .topLeading)
 						}
 					}
-				}.padding()
-			}
+				}
+			}.padding()
 		}
 	}
 	
-}
-
-struct UserView_Previews: PreviewProvider {
-	static var previews: some View {
-		UserView( dataManager: DataManager(), currentUser: User(
-			id: "Hdiowiw",
-			isActive: true,
-			name: "Test",
-			age: 30,
-			company: "Amaaa",
-			email: "giwho@gmail.com",
-			address: "",
-			about: "this is a test a bout information",
-			registered: "2019-10-23",
-			tags: ["244", "swiftui"],
-			friends: []
-		))
+	
+	init(dataManager: DataManager, currentUser: User) {
+		
+		self.dataManager = dataManager
+		self.currentUser = currentUser
+		var connectedUsers = [User]()
+		
+		for i in 0 ..< currentUser.wrappedFriends.count {
+			if let connectedUser = self.dataManager.getUser(id: currentUser.wrappedFriends[i].wrappedId) {
+				connectedUsers.append(connectedUser)
+			}
+		}
+		self.connectedUsers = connectedUsers
 	}
 }
