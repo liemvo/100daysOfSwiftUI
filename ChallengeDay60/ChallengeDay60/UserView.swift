@@ -43,6 +43,19 @@ struct UserView: View {
 						Text("Register: ").foregroundColor(.gray)
 						Text("\(currentUser.registerDateFormater)")
 					}
+					
+					ScrollView(.horizontal) {
+						HStack {
+							ForEach(self.currentUser.wrappedTags, id:\.self) {
+								Text($0)
+									.background(Color.gray)
+									.foregroundColor(.white)
+									.clipShape(Capsule())
+									.padding(2)
+							}
+						}
+						
+					}
 				}
 				Group {
 					Spacer(minLength: 32)
