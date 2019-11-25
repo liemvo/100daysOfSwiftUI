@@ -45,18 +45,18 @@ struct ContentView: View {
 				}
 			}
 			.navigationBarTitle("Users")
-			.navigationBarItems(trailing: Button(action: {
-				if self.dataBaseUsers.count > 0 {
-					for i in 0 ..< self.dataBaseUsers.count {
-						let user = self.dataBaseUsers[i]
-						self.dataManager.users.append(user)
-					}
-				} else {
-					self.dataManager.fetchData(moc: self.moc)
-				}
-			}) {
-				Text("Load data")
-			})
+			.onAppear(perform: loadData)
+		}
+	}
+	
+	private func loadData() {
+		if self.dataBaseUsers.count > 0 {
+			for i in 0 ..< self.dataBaseUsers.count {
+				let user = self.dataBaseUsers[i]
+				self.dataManager.users.append(user)
+			}
+		} else {
+			self.dataManager.fetchData(moc: self.moc)
 		}
 	}
 }
