@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44A8FD1C238BB6610001B96D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A8FD1B238BB6610001B96D /* ImagePicker.swift */; };
 		44DB3FEA238A354F007148A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DB3FE9238A354F007148A4 /* AppDelegate.swift */; };
 		44DB3FEC238A354F007148A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DB3FEB238A354F007148A4 /* SceneDelegate.swift */; };
 		44DB3FEE238A354F007148A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DB3FED238A354F007148A4 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44A8FD1B238BB6610001B96D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		44DB3FE6238A354E007148A4 /* Instafilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instafilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DB3FE9238A354F007148A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44DB3FEB238A354F007148A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				44DB3FF4238A3551007148A4 /* LaunchScreen.storyboard */,
 				44DB3FF7238A3551007148A4 /* Info.plist */,
 				44DB3FF1238A3551007148A4 /* Preview Content */,
+				44A8FD1B238BB6610001B96D /* ImagePicker.swift */,
 			);
 			path = Instafilter;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44DB3FEA238A354F007148A4 /* AppDelegate.swift in Sources */,
+				44A8FD1C238BB6610001B96D /* ImagePicker.swift in Sources */,
 				44DB3FEC238A354F007148A4 /* SceneDelegate.swift in Sources */,
 				44DB3FEE238A354F007148A4 /* ContentView.swift in Sources */,
 			);
