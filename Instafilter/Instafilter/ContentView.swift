@@ -10,10 +10,22 @@ import CoreImage
 import CoreImage.CIFilterBuiltins
 import SwiftUI
 
+class ImageSaver: NSObject {
+	func writeToPhotoAlbum(image: UIImage) {
+		UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
+	}
+	
+	@objc private func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+		print("Save finish")
+	}
+}
+
 struct ContentView: View {
 	
 	@State private var image: Image?
 	@State private var showingImagePicker  = false
+	@State private var inputImage: UIImage?
+	
 	var body: some View {
 		VStack {
 			image?.resizable()
@@ -23,26 +35,16 @@ struct ContentView: View {
 				self.showingImagePicker = true
 			}
 		}
-		.sheet(isPresented: $showingImagePicker) {
-			ImagePicker()
+		.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+			ImagePicker(image: self.$inputImage)
 		}
 	}
 	
 	private func loadImage() {
-		guard let inputImage = UIImage(named: "hcm") else { return }
-		
-		let begingImage = CIImage(image: inputImage)
-		let context = CIContext()
-		let currentFilter = CIFilter.sepiaTone()
-		
-		currentFilter.inputImage = begingImage
-		currentFilter.intensity = 1
-		
-		guard let outputImage = currentFilter.outputImage else { return }
-		if let cgimage = context.createCGImage(outputImage, from: outputImage.extent){
-			let uiImage = UIImage(cgImage: cgimage)
-			image = Image(uiImage: uiImage)
-		}
+		guard let inputImage = inputImage else { return }
+		image = Image(uiImage: inputImage)
+		let imageSaver  =  ImageSaver()
+		imageSaver.writeToPhotoAlbum(image: inputImage)
 	}
 }
 
