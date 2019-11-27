@@ -23,28 +23,83 @@ class ImageSaver: NSObject {
 struct ContentView: View {
 	
 	@State private var image: Image?
-	@State private var showingImagePicker  = false
+	@State private var filterIntensity = 0.5
+	
+	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
 	
+	@State var currentFilter = CIFilter.sepiaTone()
+	let context = CIContext()
+	
+	
 	var body: some View {
-		VStack {
-			image?.resizable()
-			.scaledToFit()
-			
-			Button("Select Image") {
-				self.showingImagePicker = true
+		
+		let intensity = Binding<Double> (
+			get: {
+				self.filterIntensity
+			},
+			set: {
+				self.filterIntensity = $0
+				self.applyProcessing()
 			}
-		}
-		.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-			ImagePicker(image: self.$inputImage)
+		)
+		return NavigationView {
+			VStack {
+				ZStack {
+					Rectangle()
+						.fill(Color.secondary)
+					if image != nil {
+						image?.resizable()
+						.scaledToFit()
+					} else {
+						Text("Tap to select a  picture")
+							.foregroundColor(.white)
+							.font(.headline)
+					}
+				}
+				.onTapGesture {
+					self.showingImagePicker = true
+				}
+				
+				HStack {
+					Text("Intensity")
+					Slider(value: intensity)
+				}
+				
+				HStack {
+					Button("Change Filter") {
+						
+					}
+					Spacer()
+					Button("Save") {
+						
+					}
+				}
+			}
+			.padding([.horizontal, .bottom])
+			.navigationBarTitle("Intafilter")
+			.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+				ImagePicker(image: self.$inputImage)
+			}
 		}
 	}
 	
 	private func loadImage() {
-		guard let inputImage = inputImage else { return }
-		image = Image(uiImage: inputImage)
-		let imageSaver  =  ImageSaver()
-		imageSaver.writeToPhotoAlbum(image: inputImage)
+		guard let inputImage  = inputImage else { return }
+		let beginImage = CIImage(image: inputImage)
+		currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+		applyProcessing()
+	}
+	
+	private func  applyProcessing() {
+		currentFilter.intensity = Float(filterIntensity)
+		
+		guard let outputImage = currentFilter.outputImage else { return }
+		
+		if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+			let uiImage  = UIImage(cgImage: cgimg)
+			image  = Image(uiImage: uiImage)
+		}
 	}
 }
 
