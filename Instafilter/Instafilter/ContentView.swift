@@ -14,6 +14,7 @@ struct ContentView: View {
 	
 	@State private var image: Image?
 	@State private var filterIntensity = 0.5
+	@State private var filterRadius = 30.5
 	
 	@State private var showingImagePicker = false
 	@State private var showingFilterSheet = false
@@ -22,8 +23,9 @@ struct ContentView: View {
 	@State private var processedImage: UIImage?
 	
 	@State var currentFilter: CIFilter = CIFilter.sepiaTone()
+	@State private var isShowingErrorSave = false
+	@State private var filterName = "Change Filter"
 	let context = CIContext()
-	
 	
 	var body: some View {
 		
@@ -36,6 +38,17 @@ struct ContentView: View {
 				self.applyProcessing()
 			}
 		)
+		
+		let radius = Binding<Double> (
+			get: {
+				self.filterRadius
+			},
+			set: {
+				self.filterRadius = $0
+				self.applyProcessing()
+			}
+		)
+		
 		return NavigationView {
 			VStack {
 				ZStack {
@@ -60,12 +73,48 @@ struct ContentView: View {
 				}
 				
 				HStack {
-					Button("Change Filter") {
+					Text("Radius")
+					Slider(value: radius)
+				}
+				HStack {
+					Button(self.filterName) {
 						self.showingFilterSheet = true
 					}
+					.popSheet(isPresented: self.$showingFilterSheet, content: {
+						PopSheet(title: Text("Select a filter"), buttons: [
+							PopSheet.Button(kind: .default, label: Text(FilterType.Crystallize.rawValue), action: {
+								self.filterName = FilterType.Crystallize.rawValue
+								self.setFilter(CIFilter.crystallize())
+							}),
+							PopSheet.Button(kind: .default, label: Text(FilterType.Edges.rawValue), action: {
+								self.filterName = FilterType.Edges.rawValue
+								self.setFilter(CIFilter.edges())
+							}),
+							PopSheet.Button(kind: .default, label: Text(FilterType.GaussianBlur.rawValue), action: {
+								self.filterName = FilterType.GaussianBlur.rawValue
+								self.setFilter(CIFilter.gaussianBlur())
+							}),
+							PopSheet.Button(kind: .default, label: Text(FilterType.SepiaTone.rawValue), action: {
+								self.filterName = FilterType.SepiaTone.rawValue
+								self.setFilter(CIFilter.sepiaTone())
+							}),
+							PopSheet.Button(kind: .default, label: Text(FilterType.UnsharpMask.rawValue), action: {
+								self.filterName = FilterType.UnsharpMask.rawValue
+								self.setFilter(CIFilter.unsharpMask())
+							}),
+							PopSheet.Button(kind: .default, label: Text(FilterType.Vignette.rawValue), action: {
+								self.filterName = FilterType.Vignette.rawValue
+								self.setFilter(CIFilter.vibrance())
+							}),
+							PopSheet.Button(kind: .cancel, label: Text("Cancel"), action: {})
+						])
+					})
 					Spacer()
 					Button("Save") {
-						guard let processedImage = self.processedImage else { return }
+						self.isShowingErrorSave = self.processedImage == nil
+						guard let processedImage = self.processedImage else {
+							return
+						}
 						let imageSaver = ImageSaver()
 						imageSaver.successHandler = {
 							print("Success!!!")
@@ -74,6 +123,8 @@ struct ContentView: View {
 							print("\($0.localizedDescription)")
 						}
 						imageSaver.writeToPhotoAlbum(image: processedImage)
+					}.alert(isPresented: self.$isShowingErrorSave) {
+						Alert(title: Text("Save Error"), message: Text("Can not save with empty image"), dismissButton: .default(Text("OK")))
 					}
 				}
 			}
@@ -82,32 +133,7 @@ struct ContentView: View {
 			.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
 				ImagePicker(image: self.$inputImage)
 			}
-			.actionSheet(isPresented: $showingFilterSheet){
-				ActionSheet(title: Text("Select a filter"), buttons: [
-					.default(Text("Crystallize")){
-						self.setFilter(CIFilter.crystallize())
-					},
-					.default(Text("Edges")) {
-						self.setFilter(CIFilter.edges())
-					},
-					.default(Text("Gaussian Blur")) {
-						self.setFilter(CIFilter.gaussianBlur())
-					},
-					.default(Text("Pixellate")) {
-						self.setFilter(CIFilter.pixellate())
-					},
-					.default(Text("Sepia Tone")) {
-						self.setFilter(CIFilter.sepiaTone())
-					},
-					.default(Text("Unsharp Mask")) {
-						self.setFilter(CIFilter.unsharpMask())
-					},
-					.default(Text("Vignette")) {
-						self.setFilter(CIFilter.vignette())
-					},
-					.default(Text("Cancel"))
-				])
-			}
+		
 		}
 	}
 	
@@ -127,7 +153,7 @@ struct ContentView: View {
 		}
 		
 		if inputKeys.contains(kCIInputRadiusKey) {
-			currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey)
+			currentFilter.setValue(filterRadius, forKey: kCIInputRadiusKey)
 		}
 		
 		if inputKeys.contains(kCIInputScaleKey) {
@@ -147,6 +173,16 @@ struct ContentView: View {
 		currentFilter = filter
 		loadImage()
 	}
+	
+	func popSheet(isPresented: Binding<Bool>, arrowEdge: Edge = .bottom, content: @escaping () -> PopSheet) -> some View {
+        Group {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                popover(isPresented: isPresented, attachmentAnchor: .rect(.bounds), arrowEdge: arrowEdge, content: { content().popover(isPresented: isPresented) })
+            } else {
+                actionSheet(isPresented: isPresented, content: { content().actionSheet() })
+            }
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -154,3 +190,4 @@ struct ContentView_Previews: PreviewProvider {
 		ContentView()
 	}
 }
+
