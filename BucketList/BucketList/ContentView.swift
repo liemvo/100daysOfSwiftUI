@@ -6,44 +6,50 @@
 //  Copyright © 2019 Liem Vo. All rights reserved.
 //
 
-import LocalAuthentication
+import MapKit
 import SwiftUI
 
 
 struct ContentView: View {
-	
-	@State private var isUnlocked = false
-	
+	@State private var centerCoordinate = CLLocationCoordinate2D()
+	@State private var locations = [MKPointAnnotation]()
+	@State private var selectedPlace: MKPointAnnotation?
+	@State private var showingPlaceDetails  =  false
 	
 	var body: some View {
-		VStack {
-			if self.isUnlocked {
-				Text("Unlocked")
-			} else {
-				Text("Locked")
-			}
-		}.onAppear {
-			self.authenticate()
-		}
-	}
-	
-	func authenticate() {
-		let  context = LAContext()
-		var error: NSError?
-		
-		if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-			let reason = "We need to unlock your data."
-			context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
-				DispatchQueue.main.async {
-					if success {
-						self.isUnlocked = true
-					} else  {
-						self.isUnlocked = false
+		ZStack {
+			MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetails: $showingPlaceDetails, annotations: self.locations)
+				.edgesIgnoringSafeArea(.all)
+			Circle()
+				.fill(Color.blue)
+				.opacity(0.3)
+				.frame(width: 32, height: 32)
+			
+			VStack {
+				Spacer()
+				HStack {
+					Spacer()
+					Button(action:  {
+						let newLocation = MKPointAnnotation()
+						newLocation.title = "Example Location"
+						newLocation.coordinate =  self.centerCoordinate
+						self.locations.append(newLocation)
+					}) {
+						Image(systemName: "plus")
 					}
+					.padding()
+					.background(Color.black.opacity(0.75))
+					.foregroundColor(.white)
+					.font(.title)
+					.clipShape(Circle())
+					.padding(.trailing)
 				}
 			}
-		} else {
+		}
+		.alert(isPresented: $showingPlaceDetails) { () -> Alert in
+			Alert(title: Text(selectedPlace?.title ?? "Unknow"), message: Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
 			
+			})
 		}
 	}
 }
