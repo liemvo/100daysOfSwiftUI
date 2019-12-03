@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440A2ECC239624D40054EC3E /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A2ECB239624D40054EC3E /* MKPointAnnotation-ObservableObject.swift */; };
+		440A2ECE239625C40054EC3E /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A2ECD239625C40054EC3E /* EditView.swift */; };
+		440A2ED0239651590054EC3E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A2ECF239651590054EC3E /* Result.swift */; };
+		440A2ED323965C7F0054EC3E /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 440A2ED223965C7F0054EC3E /* URLImage */; };
+		440A2ED5239662ED0054EC3E /* NearByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A2ED4239662ED0054EC3E /* NearByView.swift */; };
 		44CB2E7023922BE400897DF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CB2E6F23922BE400897DF4 /* AppDelegate.swift */; };
 		44CB2E7223922BE400897DF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CB2E7123922BE400897DF4 /* SceneDelegate.swift */; };
 		44CB2E7423922BE400897DF4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CB2E7323922BE400897DF4 /* ContentView.swift */; };
@@ -17,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440A2ECB239624D40054EC3E /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
+		440A2ECD239625C40054EC3E /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		440A2ECF239651590054EC3E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		440A2ED4239662ED0054EC3E /* NearByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByView.swift; sourceTree = "<group>"; };
 		44CB2E6C23922BE400897DF4 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44CB2E6F23922BE400897DF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44CB2E7123922BE400897DF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440A2ED323965C7F0054EC3E /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +76,10 @@
 				44CB2E7D23922BE600897DF4 /* Info.plist */,
 				44CB2E7723922BE600897DF4 /* Preview Content */,
 				44E9150223935B8B007604E5 /* MapView.swift */,
+				440A2ECB239624D40054EC3E /* MKPointAnnotation-ObservableObject.swift */,
+				440A2ECD239625C40054EC3E /* EditView.swift */,
+				440A2ECF239651590054EC3E /* Result.swift */,
+				440A2ED4239662ED0054EC3E /* NearByView.swift */,
 			);
 			path = BucketList;
 			sourceTree = "<group>";
@@ -94,6 +108,9 @@
 			dependencies = (
 			);
 			name = BucketList;
+			packageProductDependencies = (
+				440A2ED223965C7F0054EC3E /* URLImage */,
+			);
 			productName = BucketList;
 			productReference = 44CB2E6C23922BE400897DF4 /* BucketList.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +139,9 @@
 				Base,
 			);
 			mainGroup = 44CB2E6323922BE400897DF4;
+			packageReferences = (
+				440A2ED123965C7F0054EC3E /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 44CB2E6D23922BE400897DF4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -151,8 +171,12 @@
 			files = (
 				44CB2E7023922BE400897DF4 /* AppDelegate.swift in Sources */,
 				44E9150323935B8B007604E5 /* MapView.swift in Sources */,
+				440A2ECE239625C40054EC3E /* EditView.swift in Sources */,
 				44CB2E7223922BE400897DF4 /* SceneDelegate.swift in Sources */,
+				440A2ED0239651590054EC3E /* Result.swift in Sources */,
+				440A2ECC239624D40054EC3E /* MKPointAnnotation-ObservableObject.swift in Sources */,
 				44CB2E7423922BE400897DF4 /* ContentView.swift in Sources */,
+				440A2ED5239662ED0054EC3E /* NearByView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		440A2ED123965C7F0054EC3E /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		440A2ED223965C7F0054EC3E /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 440A2ED123965C7F0054EC3E /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 44CB2E6423922BE400897DF4 /* Project object */;
 }
