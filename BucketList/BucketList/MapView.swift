@@ -57,7 +57,6 @@ struct MapView: UIViewRepresentable {
 		mapView.delegate = context.coordinator
 		
 		
-		
 		return mapView
 	}
 	
