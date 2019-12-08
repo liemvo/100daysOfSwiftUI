@@ -22,17 +22,19 @@ struct ContentView: View {
 						.resizable()
 						.aspectRatio(contentMode: .fit)
 						.frame(width: 44, height: 44)
+						.accessibility(label: Text("Image of \(mission.displayName)"))
 					
 					VStack(alignment: .leading) {
 						Text(mission.displayName)
 							.font(.headline)
 						Text(self.showLaunchDate ? mission.formattedLaunchDate : mission.crewName)
 					}
-				}
+				}.accessibility(label: Text("View of mission \(mission.displayName)"))
 				
 			}
 			.navigationBarTitle("MoonShot")
-			.navigationBarItems(trailing: Button( showLaunchDate ? "Show Crew" : "Show Launch Date") {
+			.navigationBarItems(trailing:
+				Button(showLaunchDate ? "Show Crew" : "Show Launch Date") {
 				self.showLaunchDate.toggle()
 			})
 		}

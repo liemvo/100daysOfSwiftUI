@@ -19,9 +19,11 @@ struct AstronautView: View {
 						.resizable()
 						.scaledToFit()
 						.frame(width: geometry.size.width)
+						.accessibility(label: Text("Astronaut id: \(self.astronaut.id)"))
 					Text(self.astronaut.description)
 						.padding()
 						.layoutPriority(Double(1))
+						.accessibility(label: Text("Astronaut description: \(self.astronaut.description)"))
 					
 					ForEach(self.missions) { mission in
 						HStack {
@@ -41,7 +43,9 @@ struct AstronautView: View {
 							
 							Spacer()
 						}.padding()
+							.accessibility(label: Text("mission item: \(mission.displayName)"))
 					}
+					.accessibility(label: Text("All missions of this astronaut: \(self.astronaut.name)"))
 					.buttonStyle(PlainButtonStyle())
 				}
 			}

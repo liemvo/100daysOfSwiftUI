@@ -27,9 +27,11 @@ struct MissonView: View {
 						.frame(maxWidth: geometry.size.width * 0.7)
 						.padding(.top)
 					Text(self.mission.formattedLaunchDate)
+						.accessibility(label: Text("Mission launch date \(self.mission.formattedLaunchDate)"))
 					
 					Text(self.mission.description)
 						.padding()
+					accessibility(label: Text("Mission description: \(self.mission.description)"))
 					
 					ForEach(self.astronauts, id: \.role) { crewMember in
 						NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
@@ -49,6 +51,8 @@ struct MissonView: View {
 								
 								Spacer()
 							}
+							.accessibilityElement(children: .ignore)
+							.accessibility(label: Text("Astronaut: \(crewMember.astronaut.name) and role: \(crewMember.role)"))
 						}
 						.padding(.horizontal)
 					}

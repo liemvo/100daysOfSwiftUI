@@ -39,6 +39,7 @@ struct ContentView: View {
 						Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
 							Text("\(sleepAmount, specifier: "%g") hours")
 						}
+					.accessibility(label: Text("Desired amount of sleep \(sleepAmount)"))
 				}
 				
 				Section(header: Text("Daily coffee intake").font(.headline)) {
