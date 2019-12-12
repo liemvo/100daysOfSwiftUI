@@ -7,80 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "370A30FA-3D99-450D-9FF0-8B935F21FD69"
+            uuid = "6CB18F27-79D8-411D-9D22-421145ACBE8B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Challenge1315/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  uuid = "370A30FA-3D99-450D-9FF0-8B935F21FD69 - 7dc9aea27cfe4996"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Challenge1315.ContentView.init(moc: SwiftUI.Environment&lt;__C.NSManagedObjectContext&gt;, users: SwiftUI.FetchRequest&lt;Challenge1315.User&gt;) -&gt; Challenge1315.ContentView"
-                  moduleName = "Challenge1315"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liem.vo/Documents/Studying/Programming/SwiftUI/Study/HackingSwift/100DaysOfSwiftUI/Challenge1315/Challenge1315/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "127">
-               </Location>
-               <Location
-                  uuid = "370A30FA-3D99-450D-9FF0-8B935F21FD69 - a35bcc4174743740"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Challenge1315.ContentView.init() -&gt; Challenge1315.ContentView"
-                  moduleName = "Challenge1315"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liem.vo/Documents/Studying/Programming/SwiftUI/Study/HackingSwift/100DaysOfSwiftUI/Challenge1315/Challenge1315/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "144">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4D968FDA-8657-49C5-8EAF-1F1D299D3D1A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Challenge1315/SceneDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "scene(_:willConnectTo:options:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "038B0F42-8C75-4862-ABD1-AA17DA9BEF74"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Challenge1315/SceneDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "scene(_:willConnectTo:options:)"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "savedUser()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

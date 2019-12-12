@@ -15,10 +15,13 @@
 		4479B1BF239E3FF000983453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4479B1BD239E3FF000983453 /* LaunchScreen.storyboard */; };
 		4479B1C7239E47E700983453 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479B1C6239E47E700983453 /* ImagePicker.swift */; };
 		4479B1CC239E573200983453 /* challenge1315.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4479B1CA239E573200983453 /* challenge1315.xcdatamodeld */; };
-		4479B1CE239E59B100983453 /* CustomFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479B1CD239E59B100983453 /* CustomFieldAlert.swift */; };
 		4479B1D1239E5DF500983453 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479B1CF239E5DF500983453 /* User+CoreDataClass.swift */; };
 		4479B1D2239E5DF500983453 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479B1D0239E5DF500983453 /* User+CoreDataProperties.swift */; };
 		4479B1D6239E722F00983453 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479B1D5239E722F00983453 /* UserDetailView.swift */; };
+		4479B1D8239F88ED00983453 /* EditName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479B1D7239F88ED00983453 /* EditName.swift */; };
+		44A6231823A2316E00C26F30 /* UserAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6231723A2316E00C26F30 /* UserAnnotation.swift */; };
+		44FBA7DC23A227D200768C21 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBA7DB23A227D200768C21 /* LocationFetcher.swift */; };
+		44FBA7E023A22C4C00768C21 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBA7DF23A22C4C00768C21 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +35,13 @@
 		4479B1C0239E3FF000983453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4479B1C6239E47E700983453 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4479B1CB239E573200983453 /* challenge1315.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = challenge1315.xcdatamodel; sourceTree = "<group>"; };
-		4479B1CD239E59B100983453 /* CustomFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldAlert.swift; sourceTree = "<group>"; };
 		4479B1CF239E5DF500983453 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4479B1D0239E5DF500983453 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4479B1D5239E722F00983453 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		4479B1D7239F88ED00983453 /* EditName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditName.swift; sourceTree = "<group>"; };
+		44A6231723A2316E00C26F30 /* UserAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnnotation.swift; sourceTree = "<group>"; };
+		44FBA7DB23A227D200768C21 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		44FBA7DF23A22C4C00768C21 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +85,11 @@
 				4479B1C0239E3FF000983453 /* Info.plist */,
 				4479B1BA239E3FF000983453 /* Preview Content */,
 				4479B1C6239E47E700983453 /* ImagePicker.swift */,
-				4479B1CD239E59B100983453 /* CustomFieldAlert.swift */,
 				4479B1D5239E722F00983453 /* UserDetailView.swift */,
+				4479B1D7239F88ED00983453 /* EditName.swift */,
+				44FBA7DB23A227D200768C21 /* LocationFetcher.swift */,
+				44FBA7DF23A22C4C00768C21 /* MapView.swift */,
+				44A6231723A2316E00C26F30 /* UserAnnotation.swift */,
 			);
 			path = Challenge1315;
 			sourceTree = "<group>";
@@ -166,11 +175,14 @@
 			files = (
 				4479B1B3239E3FEE00983453 /* AppDelegate.swift in Sources */,
 				4479B1C7239E47E700983453 /* ImagePicker.swift in Sources */,
+				44FBA7DC23A227D200768C21 /* LocationFetcher.swift in Sources */,
+				44FBA7E023A22C4C00768C21 /* MapView.swift in Sources */,
+				4479B1D8239F88ED00983453 /* EditName.swift in Sources */,
 				4479B1B5239E3FEE00983453 /* SceneDelegate.swift in Sources */,
-				4479B1CE239E59B100983453 /* CustomFieldAlert.swift in Sources */,
 				4479B1D6239E722F00983453 /* UserDetailView.swift in Sources */,
 				4479B1B7239E3FEE00983453 /* ContentView.swift in Sources */,
 				4479B1D1239E5DF500983453 /* User+CoreDataClass.swift in Sources */,
+				44A6231823A2316E00C26F30 /* UserAnnotation.swift in Sources */,
 				4479B1CC239E573200983453 /* challenge1315.xcdatamodeld in Sources */,
 				4479B1D2239E5DF500983453 /* User+CoreDataProperties.swift in Sources */,
 			);

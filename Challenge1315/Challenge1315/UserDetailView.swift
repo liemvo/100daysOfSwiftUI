@@ -15,13 +15,14 @@ struct UserDetailView: View {
 			VStack {
 				self.user.wrappedImage
 				.resizable()
-					.aspectRatio(contentMode: .fit)
-					.frame(maxWidth: geometry.size.width, maxHeight: geometry.size.width * 3 / 2)
+					.aspectRatio(contentMode: .fill)
+					.frame(maxWidth: geometry.size.width/2, maxHeight: geometry.size.width * 3 / 4)
 				Text(self.user.wrappedName)
 					.font(.headline)
-				Spacer()
+				MapView(location: self.user.userLocation)
 
 			}
+		.padding()
 		}
 		
     }
