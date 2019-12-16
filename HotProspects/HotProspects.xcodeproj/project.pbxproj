@@ -17,7 +17,6 @@
 		44A6233A23A23E5300C26F30 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6233923A23E5300C26F30 /* User.swift */; };
 		44D48C2123A4D1E600584FA2 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D48C2023A4D1E600584FA2 /* MeView.swift */; };
 		44D48C2323A4D26F00584FA2 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D48C2223A4D26F00584FA2 /* ProspectsView.swift */; };
-		44D48C2623A4D81300584FA2 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D48C2523A4D81300584FA2 /* Prospect.swift */; };
 		44D48C2823A4D97B00584FA2 /* Prospects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D48C2723A4D97B00584FA2 /* Prospects.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +32,6 @@
 		44A6233923A23E5300C26F30 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		44D48C2023A4D1E600584FA2 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		44D48C2223A4D26F00584FA2 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
-		44D48C2523A4D81300584FA2 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		44D48C2723A4D97B00584FA2 /* Prospects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +100,6 @@
 		44D48C2423A4D80000584FA2 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				44D48C2523A4D81300584FA2 /* Prospect.swift */,
 				44D48C2723A4D97B00584FA2 /* Prospects.swift */,
 			);
 			path = models;
@@ -188,7 +185,6 @@
 				44D48C2123A4D1E600584FA2 /* MeView.swift in Sources */,
 				44A6233A23A23E5300C26F30 /* User.swift in Sources */,
 				44A6232623A2351200C26F30 /* AppDelegate.swift in Sources */,
-				44D48C2623A4D81300584FA2 /* Prospect.swift in Sources */,
 				44D48C2323A4D26F00584FA2 /* ProspectsView.swift in Sources */,
 				44D48C2823A4D97B00584FA2 /* Prospects.swift in Sources */,
 				44A6232823A2351200C26F30 /* SceneDelegate.swift in Sources */,
