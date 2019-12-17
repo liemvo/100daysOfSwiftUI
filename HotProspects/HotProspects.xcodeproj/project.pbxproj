@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4423549C23A8D3BC00C48300 /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423549B23A8D3BC00C48300 /* SortView.swift */; };
 		443380EB23A5F2AC0061FEC9 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 443380EA23A5F2AC0061FEC9 /* CodeScanner */; };
 		44A6232623A2351200C26F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6232523A2351200C26F30 /* AppDelegate.swift */; };
 		44A6232823A2351200C26F30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6232723A2351200C26F30 /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4423549B23A8D3BC00C48300 /* SortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
 		44A6232223A2351200C26F30 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A6232523A2351200C26F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44A6232723A2351200C26F30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				44D48C2023A4D1E600584FA2 /* MeView.swift */,
 				44D48C2223A4D26F00584FA2 /* ProspectsView.swift */,
+				4423549B23A8D3BC00C48300 /* SortView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				44A6233A23A23E5300C26F30 /* User.swift in Sources */,
 				44A6232623A2351200C26F30 /* AppDelegate.swift in Sources */,
 				44D48C2323A4D26F00584FA2 /* ProspectsView.swift in Sources */,
+				4423549C23A8D3BC00C48300 /* SortView.swift in Sources */,
 				44D48C2823A4D97B00584FA2 /* Prospects.swift in Sources */,
 				44A6232823A2351200C26F30 /* SceneDelegate.swift in Sources */,
 				44A6232A23A2351200C26F30 /* ContentView.swift in Sources */,

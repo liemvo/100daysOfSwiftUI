@@ -10,6 +10,12 @@ import SwiftUI
 import CodeScanner
 import UserNotifications
 
+enum SortType: String {
+	case name = "Name"
+	case email = "Email"
+	case recent = "Recent"
+}
+
 struct ProspectsView: View {
 	enum FilterType {
 		case none, contacted, uncontacted
@@ -19,6 +25,10 @@ struct ProspectsView: View {
 	let filter: FilterType
 	
 	@State private var isShowingScanner = false
+	@State private var isShowingSort = false
+	@State private var sortType: SortType = .name
+	
+	@State private var sortProspectes: [Prospect] = [Prospect]()
 	
 	var title: String {
 		switch filter {
@@ -45,12 +55,19 @@ struct ProspectsView: View {
 	var body: some View {
 		NavigationView {
 			List {
-				ForEach(filteredProspects) { prospect in
-					VStack(alignment: .leading) {
-						Text(prospect.name)
-							.font(.headline)
-						Text(prospect.emailAddress)
-							.foregroundColor(.secondary)
+				ForEach(filteredProspects.count > sortProspectes.count ? filteredProspects : sortProspectes) { prospect in
+					HStack {
+						VStack(alignment: .leading) {
+							Text(prospect.name)
+								.font(.headline)
+							Text(prospect.emailAddress)
+								.foregroundColor(.secondary)
+						}
+						Spacer()
+						if self.filter == .none {
+							Image(systemName: prospect.isContacted ? "star.fill" : "star")
+								.foregroundColor(.purple)
+						}
 					}
 					.contextMenu {
 						Button(prospect.isContacted ? "Mark Uncontacted" : "Mark Contacted" ) {
@@ -66,16 +83,46 @@ struct ProspectsView: View {
 				}
 			}
 			.navigationBarTitle(title)
-			.navigationBarItems(trailing: Button(action: {
-				self.isShowingScanner = true
+			.navigationBarItems(leading: Button(action: {
+				self.isShowingSort = true
 			}) {
-				Image(systemName: "qrcode.viewfinder")
-				Text("Scan")
+				Text("Sort")
+				}, trailing: Button(action: {
+					self.isShowingScanner = true
+				}) {
+					Image(systemName: "qrcode.viewfinder")
+					Text("Scan")
 			})
 				.sheet(isPresented: $isShowingScanner) {
 					CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudsond\npaul@hackingwithswift.com", completion: self.handleScan)
 			}
+			.actionSheet(isPresented: $isShowingSort) {
+				ActionSheet(title: Text("Sort type"), message: nil, buttons: [
+					.default(Text("Name"), action: {
+						self.sortType = .name
+						self.sortData()
+					}),
+					.default(Text("Recent"), action: {
+						self.sortType = .recent
+						self.sortData()
+					}),
+					.cancel()])
+			}
+			
 		}
+	}
+	
+	func sortData() {
+		sortProspectes = filteredProspects.sorted(by: { (ps1, ps2) -> Bool in
+			if self.sortType == .name {
+				return ps1.name < ps2.name
+			}
+			else if self.sortType == .recent {
+				return ps1.position > ps2.position
+			}
+			else { return ps1.emailAddress < ps2.emailAddress
+			}
+		})
 	}
 	
 	func handleScan(result: Result<String, CodeScannerView.ScanError>) {
