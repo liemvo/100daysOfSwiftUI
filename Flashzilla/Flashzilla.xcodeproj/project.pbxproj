@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A8A9214623AD5ADA005F3056 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9214523AD5ADA005F3056 /* Card.swift */; };
 		A8A9214823ADC845005F3056 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9214723ADC845005F3056 /* CardView.swift */; };
+		A8AEC1BA23B0B92800472120 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AEC1B923B0B92800472120 /* EditCards.swift */; };
 		A8F1273823AB78270098674B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F1273723AB78270098674B /* AppDelegate.swift */; };
 		A8F1273A23AB78270098674B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F1273923AB78270098674B /* SceneDelegate.swift */; };
 		A8F1273C23AB78270098674B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F1273B23AB78270098674B /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		A8A9214523AD5ADA005F3056 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A8A9214723ADC845005F3056 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A8AEC1B923B0B92800472120 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 		A8F1273423AB78270098674B /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F1273723AB78270098674B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F1273923AB78270098674B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			children = (
 				A8F1273B23AB78270098674B /* ContentView.swift */,
 				A8A9214723ADC845005F3056 /* CardView.swift */,
+				A8AEC1B923B0B92800472120 /* EditCards.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				A8F1273823AB78270098674B /* AppDelegate.swift in Sources */,
 				A8F1273A23AB78270098674B /* SceneDelegate.swift in Sources */,
 				A8F1273C23AB78270098674B /* ContentView.swift in Sources */,
+				A8AEC1BA23B0B92800472120 /* EditCards.swift in Sources */,
 				A8A9214623AD5ADA005F3056 /* Card.swift in Sources */,
 				A8A9214823ADC845005F3056 /* CardView.swift in Sources */,
 			);
