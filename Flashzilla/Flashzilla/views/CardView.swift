@@ -14,7 +14,7 @@ struct CardView: View {
 	let card: Card
 	@State var isShowingAnswer = false
 	@State private var offset = CGSize.zero
-	var removal: (() -> Void)? = nil
+	var removal: ((_ isCorrect: Bool) -> Void)? = nil
 	@State private var feedback = UINotificationFeedbackGenerator()
 	
 	var body: some View {
@@ -30,7 +30,7 @@ struct CardView: View {
 					differentiateWithoutColor
 						? nil
 						: RoundedRectangle(cornerRadius: 25, style: .continuous)
-							.fill(offset.width > 0 ? Color.green : Color.red)
+							.fill(offset.width >= 0 ? Color.green : Color.red)
 					
 			)
 				.shadow(radius: 10)
@@ -73,7 +73,7 @@ struct CardView: View {
 					} else {
 						self.feedback.notificationOccurred(.error)
 					}
-					self.removal?()
+					self.removal?(self.offset.width > 0)
 				} else {
 					self.offset = .zero
 				}

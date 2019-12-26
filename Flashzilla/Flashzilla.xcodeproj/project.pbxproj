@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80F75ED23B468150054D2C5 /* Flashzilla.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F75EC23B468150054D2C5 /* Flashzilla.swift */; };
+		A80F75EF23B468CA0054D2C5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80F75EE23B468CA0054D2C5 /* SettingsView.swift */; };
 		A8A9214623AD5ADA005F3056 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9214523AD5ADA005F3056 /* Card.swift */; };
 		A8A9214823ADC845005F3056 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9214723ADC845005F3056 /* CardView.swift */; };
 		A8AEC1BA23B0B92800472120 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AEC1B923B0B92800472120 /* EditCards.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A80F75EC23B468150054D2C5 /* Flashzilla.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashzilla.swift; sourceTree = "<group>"; };
+		A80F75EE23B468CA0054D2C5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A8A9214523AD5ADA005F3056 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A8A9214723ADC845005F3056 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A8AEC1B923B0B92800472120 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 				A8F1273B23AB78270098674B /* ContentView.swift */,
 				A8A9214723ADC845005F3056 /* CardView.swift */,
 				A8AEC1B923B0B92800472120 /* EditCards.swift */,
+				A80F75EC23B468150054D2C5 /* Flashzilla.swift */,
+				A80F75EE23B468CA0054D2C5 /* SettingsView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8F1273823AB78270098674B /* AppDelegate.swift in Sources */,
+				A80F75EF23B468CA0054D2C5 /* SettingsView.swift in Sources */,
+				A80F75ED23B468150054D2C5 /* Flashzilla.swift in Sources */,
 				A8F1273A23AB78270098674B /* SceneDelegate.swift in Sources */,
 				A8F1273C23AB78270098674B /* ContentView.swift in Sources */,
 				A8AEC1BA23B0B92800472120 /* EditCards.swift in Sources */,
