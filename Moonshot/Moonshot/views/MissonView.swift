@@ -21,19 +21,29 @@ struct MissonView: View {
 		GeometryReader { geometry in
 			ScrollView(.vertical) {
 				VStack {
-					Image(self.mission.image)
-						.resizable()
-						.scaledToFit()
-						.frame(maxWidth: geometry.size.width * 0.7)
-						.padding(.top)
+					GeometryReader { geo in
+						HStack {
+							Spacer()
+							Image(self.mission.image)
+								.resizable()
+								.scaledToFit()
+								.frame(maxWidth: geometry.size.width * 0.7)
+								.padding(.top)
+								.scaleEffect(abs((geo.frame(in: .global).minY * 0.7 + geometry.size.height / 2) / geometry.size.width) > 0.8 ? (geo.frame(in: .global).minY * 0.7 + geometry.size.height / 2) / geometry.size.width : 0.8)
+							Spacer()
+						}
+					}
+					
+					
 					Text(self.mission.formattedLaunchDate)
 						.accessibility(label: Text("Mission launch date \(self.mission.formattedLaunchDate)"))
 					
 					Text(self.mission.description)
 						.padding()
-					accessibility(label: Text("Mission description: \(self.mission.description)"))
+						.accessibility(label: Text("Mission description: \(self.mission.description)"))
 					
 					ForEach(self.astronauts, id: \.role) { crewMember in
+						
 						NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
 							HStack {
 								Image(crewMember.astronaut.id)
@@ -51,10 +61,12 @@ struct MissonView: View {
 								
 								Spacer()
 							}
+								
 							.accessibilityElement(children: .ignore)
 							.accessibility(label: Text("Astronaut: \(crewMember.astronaut.name) and role: \(crewMember.role)"))
 						}
 						.padding(.horizontal)
+						
 					}
 					.buttonStyle(PlainButtonStyle())
 					

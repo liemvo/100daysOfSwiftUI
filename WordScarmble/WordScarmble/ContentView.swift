@@ -18,30 +18,41 @@ struct ContentView: View {
 	@State private var score = 0
 	var body: some View {
 		NavigationView {
-			VStack {
-				TextField("Enter your word", text: $newWord, onCommit: addNewWord)
-					.textFieldStyle(RoundedBorderTextFieldStyle())
-					.autocapitalization(.none)
-					.padding()
+			GeometryReader { fullScreen in
+				ScrollView(.vertical) {
+					VStack {
+						TextField("Enter your word", text: self.$newWord, onCommit: self.addNewWord)
+							.textFieldStyle(RoundedBorderTextFieldStyle())
+							.autocapitalization(.none)
+							.padding()
+						
+						
+						ForEach(0..<self.usedWords.count, id:\.self) { index in
+							GeometryReader { geo in
+								HStack {
+									Image(systemName:"\(self.usedWords[index].count).circle")
+										.background(self.color(index: index))
+									Text(self.usedWords[index])
+								}
 				
-				List(usedWords, id:\.self) { word in
-					HStack {
-						Image(systemName: "\(word.count).circle")
-						Text(word)
+								.offset(x: geo.frame(in: .global).minY / 24, y: CGFloat(0))
+								.accessibilityElement(children: .ignore)
+								.accessibility(label: Text("\(self.usedWords[index]), \(self.usedWords[index].count) letters"))
+							}
+							.frame(height:40)
+						}
+						Text("Your score: \(self.score)").font(.headline)
 					}
-					.accessibilityElement(children: .ignore)
-					.accessibility(label: Text("\(word), \(word.count) letters"))
 				}
-				Text("Your score: \(score)").font(.headline)
+				.navigationBarTitle(self.rootWord)
+				.onAppear(perform: self.startGame)
+				.alert(isPresented: self.$showErrorMessage) {
+					Alert(title: Text(self.errorTitle), message: Text(self.errorMessage), dismissButton: .default(Text("OK")))
+				}
+				.navigationBarItems(leading: Button("Restart") {
+					self.startGame()
+				})
 			}
-			.navigationBarTitle(rootWord)
-			.onAppear(perform: startGame)
-			.alert(isPresented: $showErrorMessage) {
-				Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
-			}
-			.navigationBarItems(leading: Button("Restart") {
-				self.startGame()
-			})
 		}
 	}
 	
@@ -75,12 +86,23 @@ struct ContentView: View {
 		usedWords.insert(answer, at: 0)
 	}
 	
+	private func color(index: Int) -> Color {
+		let value = Double(index) / Double(usedWords.count == 0 ? index : usedWords.count)
+		print("\(index), \(usedWords.count), value = \(value)")
+		return Color(red: Double.random(in: 0.0...1.0), green: value, blue: value)
+	}
+	
 	private func startGame() {
 		if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
 			if let startWords = try? String(contentsOf: startWordsURL) {
 				let allWords = startWords.components(separatedBy: "\n")
 				rootWord = allWords.randomElement() ?? "silkworm"
 				usedWords.removeAll()
+				
+				[Int](repeating: 3, count: 20).enumerated().forEach { index, value in
+					usedWords.append("Text \(index)")
+				}
+				
 				return
 			}
 		}
