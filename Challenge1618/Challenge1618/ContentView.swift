@@ -2,15 +2,36 @@
 //  ContentView.swift
 //  Challenge1618
 //
-//  Created by Liem Vo on 12/28/19.
+//  Created by Liem Vo on 12/29/19.
 //  Copyright © 2019 Liem Vo. All rights reserved.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection = 0
+ 
     var body: some View {
-        Text("Hello, World!")
+        TabView(selection: $selection){
+            Text("First View")
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image("first")
+                        Text("First")
+                    }
+                }
+                .tag(0)
+            Text("Second View")
+                .font(.title)
+                .tabItem {
+                    VStack {
+                        Image("second")
+                        Text("Second")
+                    }
+                }
+                .tag(1)
+        }
     }
 }
 
