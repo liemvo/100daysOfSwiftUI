@@ -14,7 +14,18 @@ class Favorites: ObservableObject {
 	private let saveKey = "Favorites"
 	
 	init() {
-		self.resorts = []
+		guard let decoded = UserDefaults.standard.object(forKey: saveKey) as? Data else {
+			self.resorts = []
+			return
+			
+		}
+		
+		guard let resorts = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? Set<String> else {
+			self.resorts = []
+			return
+		}
+		
+		self.resorts = resorts
 	}
 	
 	func contains(_ resort: Resort) -> Bool {
@@ -34,6 +45,7 @@ class Favorites: ObservableObject {
 	}
 	
 	func save() {
-		
+		guard let data = try? NSKeyedArchiver.archivedData(withRootObject: resorts, requiringSecureCoding: false) else { return }
+		UserDefaults.standard.set(data, forKey: saveKey)
 	}
 }

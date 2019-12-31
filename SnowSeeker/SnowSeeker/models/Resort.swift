@@ -10,6 +10,7 @@ import Foundation
 
 
 struct Resort: Codable, Identifiable {
+	
 	let id: String
 	let name: String
 	let country: String

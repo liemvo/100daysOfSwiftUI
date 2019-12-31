@@ -9,14 +9,26 @@
 import SwiftUI
 
 struct ContentView: View {
-	let resorts: [Resort] = Bundle.main.decode("resorts.json")
+	
+	enum SortType: String {
+		case name = "Name"
+		case country = "Country"
+		case unknow = ""
+	}
+	var resorts: [Resort] = Bundle.main.decode("resorts.json")
 	
 	@Environment(\.horizontalSizeClass) var sizeClass
 	@ObservedObject var favorites = Favorites()
 	
+	@State private var isShowingSort = false
+	@State private var isShowingFilter = false
+	@State private var sortType: SortType = .unknow
+	@State private var sortedResort: [Resort] = [Resort]()
+	@State private var filterValue: String = ""
+	
 	var body: some View {
 		NavigationView {
-			List(resorts) { resort in
+			List(sortedResort) { resort in
 				NavigationLink(destination: ResortView(resort: resort)) {
 					Image(resort.country)
 						.resizable()
@@ -41,17 +53,60 @@ struct ContentView: View {
 					if self.favorites.contains(resort) {
 						Spacer()
 						Image(systemName: "heart.fill")
-						.accessibility(label: Text("This is a favorite resort"))
+							.accessibility(label: Text("This is a favorite resort"))
 							.foregroundColor(Color.red)
 					}
 				}
+				
 			}
 			.navigationBarTitle("Resorts")
+			.navigationBarItems(leading:
+				Button(action: {
+					self.isShowingSort = true
+				}) {
+					Text("Sort")
+				},
+								trailing: Button(action: {
+									self.isShowingFilter = true
+								}) {
+									Text("Filter")
+									
+			})
+				.onAppear {
+					self.updateSortResorts()
+			}
+			.actionSheet(isPresented: $isShowingSort) {
+				ActionSheet(title: Text("Sort type"), message: nil, buttons: [
+					.default(Text(SortType.name.rawValue), action: {
+						self.sortType = .name
+						self.updateSortResorts()
+					}),
+					.default(Text(SortType.country.rawValue), action: {
+						self.sortType = .country
+						self.updateSortResorts()
+					}),
+					.cancel()])
+			}
+			.sheet(isPresented: $isShowingFilter, onDismiss: updateSortResorts) {
+				FilterView(resorts: self.resorts, filter: self.$filterValue)
+			}
 			
 			WelcomeView()
 		}
 		.environmentObject(favorites)
 		.phoneOnlyStackNavigationView()
+	}
+	
+	func updateSortResorts() {
+		sortedResort = self.resorts
+		if (sortType == .name) {
+			sortedResort.sort { $0.name < $1.name }
+		} else if (sortType == .country) {
+			sortedResort.sort { $0.country < $1.country }
+		}
+		if !filterValue.isEmpty {
+			sortedResort = sortedResort.filter{ $0.country == self.filterValue || String($0.size) == self.filterValue || String($0.price) == self.filterValue }
+		}
 	}
 }
 
